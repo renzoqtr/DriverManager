@@ -34,10 +34,10 @@ public class ExampleTest {
     @Test
     public void simpleTestExample() {
         webdriver.get("https://www.avianca.com/es/");
-        WebElement origenInput = webdriver.findElement(By.cssSelector("input[aria-labelledby='departureStationInputLabel']"));
-        String placeholderValue = origenInput.getAttribute("placeholder");
+        WebElement origenLabel = webdriver.findElement(By.id("departureStationInputLabel"));
+        String origenLabelText = origenLabel.getText();
         WebElement buscarButton = webdriver.findElement(By.id("searchButton"));
-        assertEquals("Origen", placeholderValue);
+        assertEquals("Origen", origenLabelText);
         assertTrue(buscarButton.isDisplayed());
     }
 
